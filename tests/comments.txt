@@ -1,0 +1,3 @@
+// A comment
+let x = 5; // another comment
+display(x);
