@@ -1,0 +1,4 @@
+let score = 85;
+if score >= 70 then display("A+") else 0;
+let x = 0;
+if x != 0 then display(x = 100 / x) else display(25);
