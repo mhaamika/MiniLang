@@ -142,6 +142,19 @@ Enable trace mode to inspect the interpreter's internal processing:
 java Main --trace program.txt
 ```
 
+**Select a file Screen**
+<img width="1440" height="791" alt="Screenshot 2026-10-24 at 6 46 46 PM" src="https://github.com/user-attachments/assets/04cecb51-1c73-47ee-b22f-4e209f8caa2b" />
+
+
+**When no file selected***
+<img width="1440" height="900" alt="Screenshot 2026-10-24 at 6 46 13 PM" src="https://github.com/user-attachments/assets/677b237a-11eb-4709-8db0-a116e778b660" />
+
+**Test Cases**
+
+
+
+
+
 ## Key Learning Outcomes
 
 - Designed a lexer and parser from scratch.
