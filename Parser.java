@@ -151,40 +151,67 @@ public class Parser {
         System.out.println("Result: " + formatValue(value));
     }
 
-    private void conditional() {
-        eat("IDENTIFIER"); // if
-        if (trace) {
-            System.out.println("[PARSE] Conditional expression");
-        }
-        Object conditionValue = expression();
-        if (!(conditionValue instanceof Boolean)) {
-            throw new RuntimeException("The condition in 'if' must be true or false.");
-        }
+    
+private void conditional() {
+    eat("IDENTIFIER"); // if
 
-        if (word("then")) {
-            eat("IDENTIFIER");
-        }
-
-        boolean condition = ((Boolean) conditionValue).booleanValue();
-        if (trace) {
-            System.out.println("[EVAL] if condition = " + condition);
-        }
-
-        if (condition) {
-            conditionalBranch();
-            if (word("else")) {
-                eat("IDENTIFIER");
-                skipBranch(false);
-            }
-        } else {
-            skipBranch(true);
-            if (!word("else")) {
-                throw new RuntimeException("Expected 'else' in conditional.");
-            }
-            eat("IDENTIFIER");
-            conditionalBranch();
-        }
+    if (trace) {
+        System.out.println("[PARSE] Conditional expression");
     }
+
+    Object conditionValue = expression();
+
+    if (!(conditionValue instanceof Boolean)) {
+        throw new RuntimeException(
+            "The condition in 'if' must be true or false."
+        );
+    }
+
+    if (word("then")) {
+        eat("IDENTIFIER");
+    }
+
+    boolean condition = ((Boolean) conditionValue).booleanValue();
+
+    if (trace) {
+        System.out.println("[EVAL] if condition = " + condition);
+    }
+
+    if (condition) {
+        conditionalBranch();
+
+        // Consume an optional semicolon before else.
+        if (currentToken().type.equals("SEMICOLON")) {
+            eat("SEMICOLON");
+        }
+
+        // If else exists, skip its branch because the if branch ran.
+        if (word("else")) {
+            eat("IDENTIFIER"); // else
+            skipBranch(false);
+        }
+    } else {
+        // Skip the if branch without executing it.
+        skipBranch(true);
+
+        // Consume an optional semicolon before else.
+        if (currentToken().type.equals("SEMICOLON")) {
+            eat("SEMICOLON");
+        }
+
+        if (!word("else")) {
+            throw new RuntimeException(
+                "Expected 'else' in conditional."
+            );
+        }
+
+        eat("IDENTIFIER"); // else
+
+        // Execute the else branch.
+        conditionalBranch();
+    }
+}
+
 
     private void conditionalBranch() {
         if (word("display")) {
