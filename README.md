@@ -151,8 +151,50 @@ java Main --trace program.txt
 
 **Test Cases**
 
+// MiniLang feature demonstration
 
+// Variables
+let x = 4;
+let y = 5;
+display(x);
+display(y);
 
+// Arithmetic
+display(x + y);
+display(x * y);
+display((x + y) * 2);
+display(x ^ 2);
+
+// Unary operators
+display(-x);
+display(+y);
+
+// Comparisons
+display(x > y);
+display(x == y);
+display(x != y);
+
+// Logical operators
+display(x > y && y > 0);
+display(x < y || y > 0);
+display(!(x == y));
+
+// Conditional execution
+if x > y then
+    display("x is greater than y");
+else
+   display("sgjhg");
+
+// Built-in functions
+display(abs(-8));
+display(sqrt(25));
+display(min(3, 7));
+display(max(3, 7));
+display(pow(2, 3));
+display(factorial(5));
+
+**Output**
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 3 00 52 PM" src="https://github.com/user-attachments/assets/0bff376f-be0c-4e54-9116-81107297d1b4" />
 
 
 ## Key Learning Outcomes
