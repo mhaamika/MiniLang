@@ -200,7 +200,7 @@ display(x)
 ```
 
 **Output**
-<img width="1440" height="900" alt="Screenshot 2026-10-26 at 3 00 52 PM" src="https://github.com/user-attachments/assets/0bff376f-be0c-4e54-9116-81107297d1b4" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 3 33 29 PM" src="https://github.com/user-attachments/assets/d462ec42-c7db-42c5-ad7d-a802a0ee725a" />
 
 
 ## Key Learning Outcomes
