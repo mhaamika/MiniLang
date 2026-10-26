@@ -193,6 +193,10 @@ display(min(3, 7));
 display(max(3, 7));
 display(pow(2, 3));
 display(factorial(5));
+
+//Edge cases
+display(5/0);
+display(x)
 ```
 
 **Output**
